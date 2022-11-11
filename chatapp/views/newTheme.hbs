@@ -1,0 +1,84 @@
+<div class="container-fluid p-0">
+    <!-- <div > -->
+    <header class="global_header d-flex">
+        <!-- <div class="row" style="height: 50px; width: 100%;"> -->
+            <div class="App_name mr-auto m-0 h5 text-white d-flex align-items-center flex-row pl-4" onclick="location.href = '/room';">
+                <h1 class="mb-0 mr-2 text-info">&lt;</h1>
+                <h1 class="mb-0 mr-2" style="color:#ffd700;">IPPON</h1>
+                <h1 class="mb-0 mr-2">hub</h1>
+                <h1 class="mb-0 text-info">/&gt;</h1>
+            </div>
+            <div class="create_theme_container d-flex align-items-center m-0">
+                <a class="create_theme m-2 pl-2 pr-2 pb-1 pt-2" href="">+New IPPON</a>
+            </div>
+            <div class="header-login_user d-flex align-items-center ml-5 mt-0 mb-0">
+                
+                <input id="userName" type="hidden" value="{{userName}}">
+                <div class="header_icon  text-white h3 ml-3 mr-3 mb-0 " onclick="exit();">
+                    <i class="fas fa-sign-out-alt"></i>
+                </div>
+                <div class="header_icon rounded-circle bg-secondary text-white h3 ml-3 mr-3 mb-0">
+                    <i class="fas fa-user"></i>
+                </div>
+                <a class="header_user_name h4 ml-3 mr-3 mb-0" href="">{{userName}}</a>
+            </div>
+    </header>
+    <div class="new_theme_container m-0 mx-auto">
+        <!-- <h1>新規お題の作成</h1> -->
+        <div class="theme_title_bar d-flex flex-row align-items-center">
+            <h2 class="mb-0 mr-3 ml-5" style="color:#ffd700;">新規</h2>
+            <h2 class="mb-0 mr-3 text-white">お題作成</h2>
+        </div>
+        <div class="input_theme_container container-fluid m-4">
+            <!-- 作成者 -->
+            <div class="row theme_item_row m-4">
+                <div class="left_item h3 d-flex align-items-center justify-content-center col-md-3 p-2 m-0">作成者</div>
+                <div id="creater_user" class="h3 col-md-9 pl-4 m-0 d-flex align-items-center">aaa</div>
+            </div>
+            <!-- 内容 -->
+            <div class="row theme_item_row m-4">
+                <div class="left_item h3 d-flex align-items-center justify-content-center col-md-3 p-2 m-0">お題</div>
+                <textarea class="form-control col-md-9 h5 mb-0" id="input_theme" placeholder="ここにお題を入力" rows="2"></textarea>
+            </div>
+            <!-- 投稿 -->
+            <div class="row">
+                <div class="m-0 col-md-12">
+                    <div class="d-flex justify-content-center">
+                        <input class="create_theme_btn m-2 pl-2 pr-2 pb-1 pt-2 text-center" value="作成" onclick="postTheme()" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="new_theme_result" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="new_theme_result_title">Modal title</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 id="new_theme_result_msg">MSG</h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="modalNo();">いいえ</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="modalYes();">はい</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .main_content { display: none; }
+</style>
+
+<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/cookie.js"></script>
+<script src="/javascripts/newTheme.js"></script>
+<script src="/javascripts/index.js"></script>
+<script src="/javascripts/exit.js"></script>
+<link rel="stylesheet" href="/stylesheets/theme.css"/>

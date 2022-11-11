@@ -1,0 +1,82 @@
+.user_main_page{
+    background-color: #f3f3f3;
+}
+
+.user_profile{
+    background-color:#fff;
+}
+
+.user_profile_icon{
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+    text-align: center;
+    line-height: 96px;
+}
+
+.user_profile_name{
+    color: darkcyan;
+}
+
+.user_profile_link{
+    align-items: center;
+}
+.border{
+    border: none;
+    height: 4px; 
+    width:80%;
+    background-color:#FFCC33;
+    
+}
+.user_profile_introduction{
+    min-height: 30px;
+    width: 85%;
+}
+.user_follow_tag{
+    background-color: #fff;
+}
+.follow_tag{
+    background-color: #ddd;
+    color: black;
+}
+
+.user_theme_container{
+    background-color: #fff;
+}
+
+.one_theme{
+    width: 95%;
+    border: solid 2px #aaa;
+}
+.post_date{
+    background-color: black;
+    color: white;
+}
+.theme_content{
+    background-color: #FFCC33;
+    font-weight: bold;
+}
+/* .theme_tag{
+    background-color: #ddd;
+    color: black;
+} */
+.content_icon{
+    width: 24px;
+    height: 100%;
+    flex-shrink: 0;
+    text-align: center;
+    
+    line-height: 24px;
+}
+.theme_tag{
+    font-size: 11px;
+    background-color: #ddd;
+    color: black;
+}
+
+.user_silly_container{
+    background-color: #fff;
+}
+.silly_content{
+    font-weight: bold;
+}

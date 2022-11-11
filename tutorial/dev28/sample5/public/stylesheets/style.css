@@ -1,0 +1,21 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+div {
+    margin-right: 50px;
+    display: inline-block;
+}
+
+.style1 {
+    background-color: #00B7FF;
+}
+
+.style2 {
+    color: #ff0000;
+}
+
+.style3 {
+    font-size: 50px;
+}

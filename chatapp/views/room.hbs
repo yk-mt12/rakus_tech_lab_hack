@@ -1,0 +1,131 @@
+<div class="container-fluid p-0">
+    <!-- <div > -->
+    <header class="global_header d-flex">
+        <!-- <div class="row" style="height: 50px; width: 100%;"> -->
+        <div class="App_name mr-auto m-0 h5 text-white d-flex align-items-center flex-row pl-4">
+            <h1 class="mb-0 mr-2 text-info">&lt;</h1>
+            <h1 class="mb-0 mr-2" style="color:#ffd700;">IPPON</h1>
+            <h1 class="mb-0 mr-2">hub</h1>
+            <h1 class="mb-0 text-info">/&gt;</h1>
+        </div>
+
+        <div class="create_theme_container d-flex align-items-center m-0">
+            <a class="create_theme m-2 pl-2 pr-2 pb-1 pt-2" href="">+New IPPON</a>
+        </div>
+        <div class="header-login_user d-flex align-items-center ml-5 mt-0 mb-0">
+            
+            <input id="userName" type="hidden" value="{{userName}}" />
+            <div class="header_icon text-white h3 ml-3 mr-3 mb-0">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <div class="header_icon rounded-circle bg-secondary text-white h3 ml-3 mr-3 mb-0">
+                <i class="fas fa-user"></i>
+            </div>
+            <a class="header_user_name h4 ml-3 mr-3 mb-0" href="/user/{{userName}}">{{userName}}</a>
+        </div>
+    </header>
+    <main>
+        {{! 検索窓 }}
+        <div class="side_container">
+            <div class="search_container">
+                <div class="side_header">
+                    <span class="side_title">IPPON</span>
+                    <span class="side_sub_title">Search</span>
+                    <input id="search" placeholder="検索" />
+                </div>
+                <input class="search_btn" value="GO" type="button" onclick="searchRoom()" />
+            </div>
+            <div class="side_content">
+                <div class="result_container">
+                <p id="search_title">RoomTitle</p>
+                <ul id="search_list">
+                </ul>
+            </div>
+            <div class="recommend_container">
+                <p id="recommend_title">Recommends</p>
+                <ul id="recommend_list">
+                </ul>
+            </div>
+
+            </div>
+            
+        </div>
+        <div id="home_page" class="main_content">
+            <div class="home_title">
+               <p class="front-title">Welcome to</p><p class="back-title"> IPPON HUB</p>
+            </div>
+            <div class="balloon1">
+                <p>良かったらボケていってね</p>
+            </div>
+            <div id="img">
+                <img src="img/usi.png" alt="usi" />
+            </div>
+        </div>
+        <div class="main_content container-fluid p-0" id="chat">
+            {{! お題 }}
+            <div class="theme_container h2">
+                <div class="hexagon-parent">
+                    <div class="hexagon">
+                        <p
+                            id="room_title"
+                            class="room_title_text"
+                        >節電対策のためにサーバールームの電源を全て落とした．その瞬間，電話が鳴り止まない． どうする？</p>
+                    </div>
+                </div>
+            </div>
+
+            {{! 投稿エリア }}
+            <div class="submit_container container-fluid">
+                <form method="post" action="/" class="row submit_form">
+                    <div class="room-message col-md-10 p-0">
+                        <textarea id="message" rows="4" class="room-message_textarea" placeholder="ボケて!!"></textarea>
+                    </div>
+                    {{! <div class="room-submit col-md-4 container-fluid"> }}
+                    <input type="button" value="投稿" class="common-button room-publish_button col-md-2" onclick="publish();" />
+                    {{! <input type="button" value="メモ" class="common-button room-memo_button col-md-6"
+                            onclick="memo();"> }}
+                    {{!</div> }}
+
+                    <!-- <div class="room-exit">
+                        <input type="button" value="退室する" class="common-button room-exit_button" onclick="exit();">
+                    </div> -->
+                </form>
+            </div>
+            <div class="room-thread">
+                <div id="thread"></div>
+            </div>
+            {{! ボケが並ぶ }}
+            <div class="content_container container-fluid">
+                <div class="silly_title row mt-2">
+                    <p class="col-md-6 h4">人気順</p>
+                    <p class="col-md-6 h4">新着順</p>
+                </div>
+                {{! ボケ本体 }}
+                <div class="silly_content row mt-2">
+
+                    {{!-- 人気のコンテナ --}}
+                    
+                    <div class="silly_container col-md-6 p-0" id="popular_silly">
+                    </div>
+                    
+                    {{!-- 最新のコンテナ --}}
+                    <div class="silly_container col-md-6 p-0" id="new_silly">
+                        {{!-- 1つの投稿 --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<style>
+    .main_content { display: none; }
+</style>
+
+
+<script src="/javascripts/socket.js"></script>
+<script src="/javascripts/cookie.js"></script>
+<script src="/javascripts/index.js"></script>
+<script src="/javascripts/enter.js"></script>
+<script src="/javascripts/publish.js"></script>
+<script src="/javascripts/memo.js"></script>
+<script src="/javascripts/exit.js"></script>
